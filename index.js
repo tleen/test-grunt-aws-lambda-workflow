@@ -3,6 +3,8 @@ var moment = require('moment'),
 
 exports.handler = function(event, context){
   console.log('Received event', JSON.stringify(event, null, 2));
-  context.succeed('event execution @ ' + moment().format('LLLL'));
+  context.succeed({
+    time : moment().format('LLLL'),
+    message : 'All set'});
 }
 
